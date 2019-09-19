@@ -1,9 +1,8 @@
-
 import 'package:flutter/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:diabetes_memo/screen/tab_home.dart';
 
-class HomeScreen extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(

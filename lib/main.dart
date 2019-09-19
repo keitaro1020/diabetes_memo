@@ -17,7 +17,7 @@ void main() {
       child: CupertinoApp(
         debugShowCheckedModeBanner: false,
         color: Styles.appBackground,
-        home: HomeScreen(),
+        home: Home(),
       ),
     ),
   );

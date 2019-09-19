@@ -1,4 +1,4 @@
-package com.example.diabetes_memo
+package keitaro1020.diabetes_memo
 
 import android.os.Bundle
 
