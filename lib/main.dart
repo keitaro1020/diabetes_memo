@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show DeviceOrientation, SystemChrome;
 import 'package:scoped_model/scoped_model.dart';
 import 'package:diabetes_memo/data/app_state.dart';
@@ -14,7 +15,7 @@ void main() {
   runApp(
     ScopedModel<AppState>(
       model: AppState(),
-      child: CupertinoApp(
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
         color: Styles.appBackground,
         home: Home(),

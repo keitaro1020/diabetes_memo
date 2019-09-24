@@ -9,8 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   cupertino_icons: ^0.1.2
   scoped_model: ^1.0.1
+  timeline_list: ^0.0.3
 
 dev_dependencies:
   flutter_test:

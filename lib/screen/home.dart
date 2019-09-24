@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:diabetes_memo/screen/tab_home.dart';
+import 'package:diabetes_memo/screen/tab_timeline.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -8,36 +10,31 @@ class Home extends StatelessWidget {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text("diabetes memo"),
-        trailing: Icon(CupertinoIcons.settings),
       ),
       child: CupertinoTabScaffold(
         tabBar: CupertinoTabBar(items: [
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home),
+            icon: Icon(Icons.timeline),
             title: Text('Home'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.book),
-            title: Text('My Garden'),
+            icon: Icon(Icons.view_list),
+            title: Text('一覧'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.search),
-            title: Text('Search'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.settings),
-            title: Text('Settings'),
+            icon: Icon(Icons.settings),
+            title: Text('設定'),
           ),
         ]),
         tabBuilder: (context, index) {
           if (index == 0) {
-            return FirstTab();
+            return TimelineTab();
           } else if (index == 1) {
             return SecondTab();
           } else if (index == 2) {
             return ThirdTab();
           } else {
-            return FirstTab();
+            return TimelineTab();
           }
         },
       )
