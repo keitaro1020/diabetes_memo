@@ -88,12 +88,17 @@ class MemoDialog extends StatelessWidget {
                 child: ScopedModelDescendant<AppState>(
                   builder: (context, child, model) => FlatButton(
                     onPressed: () {
-                      final icons = [Icons.add, Icons.add_a_photo, Icons.airline_seat_flat_angled, Icons.alarm, Icons.book];
+                      final icons = [
+                        Icons.add,
+                        Icons.add_a_photo,
+                        Icons.airline_seat_flat_angled,
+                        Icons.alarm,
+                        Icons.book
+                      ];
                       model.addTimelineItem(TimelineItem(
-                        time: DateTime.now(),
-                        content: "血糖値: $bloodGlucoseLevel",
-                        icon: Icon(icons[rand.nextInt(icons.length)])
-                      ));
+                          time: DateTime.now(),
+                          content: "血糖値: $bloodGlucoseLevel",
+                          icon: Icon(icons[rand.nextInt(icons.length)])));
                       Navigator.of(context).pop(); // To close the dialog
                     },
                     child: Text("buttonText"),

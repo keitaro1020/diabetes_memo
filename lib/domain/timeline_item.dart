@@ -1,4 +1,3 @@
-
 import "package:intl/intl.dart";
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:flutter/material.dart';
@@ -10,11 +9,7 @@ class TimelineItem {
   final Color iconBackground;
   final Icon icon;
   const TimelineItem(
-      {this.time,
-      this.name,
-      this.content,
-      this.icon,
-      this.iconBackground});
+      {this.time, this.name, this.content, this.icon, this.iconBackground});
 
   get timeString {
     initializeDateFormatting("ja_JP");

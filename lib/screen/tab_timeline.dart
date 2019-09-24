@@ -12,32 +12,30 @@ class TimelineTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      child: Scaffold(
-        body: ScopedModelDescendant<AppState>(
-          builder: (context, child, model) =>
-          Timeline.builder(
-            itemBuilder: timelineBuilder,
-            itemCount: model.timelineItems.length,
-            physics: ClampingScrollPhysics(),
-            position: TimelinePosition.Left,
-          ),
+        child: Scaffold(
+      body: ScopedModelDescendant<AppState>(
+        builder: (context, child, model) => Timeline.builder(
+          itemBuilder: timelineBuilder,
+          itemCount: model.timelineItems.length,
+          physics: ClampingScrollPhysics(),
+          position: TimelinePosition.Left,
         ),
-        floatingActionButton: Container(
-          margin: EdgeInsets.only(bottom: 90.0),
-          child: FloatingActionButton(
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) => MemoDialog(),
-              );
-            },
-            mini: false,
-            child: Icon(Icons.add),
-            backgroundColor: Colors.pink,
-          ),
+      ),
+      floatingActionButton: Container(
+        margin: EdgeInsets.only(bottom: 90.0),
+        child: FloatingActionButton(
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) => MemoDialog(),
+            );
+          },
+          mini: false,
+          child: Icon(Icons.add),
+          backgroundColor: Colors.pink,
         ),
-      )
-    );
+      ),
+    ));
   }
 
   TimelineModel timelineBuilder(BuildContext context, int i) {
@@ -56,8 +54,8 @@ class TimelineTab extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Text(
-                item.timeString, 
-                style: textTheme.title, 
+                item.timeString,
+                style: textTheme.title,
                 textAlign: TextAlign.left,
               ),
               const SizedBox(
