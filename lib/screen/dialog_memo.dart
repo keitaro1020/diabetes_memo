@@ -48,41 +48,20 @@ class MemoDialog extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min, // To make the card compact
             children: <Widget>[
-              Expanded(
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.right,
-                  decoration: InputDecoration(
-                    labelText: "血糖値",
-                    suffixText: "mg/dL",
-                  ),
-                  onChanged: (value) {
-                    try {
-                      bloodGlucoseLevel = int.parse(value);
-                    } catch (exception) {}
-                  },
+              separator("血糖値"),
+              TextField(
+                keyboardType: TextInputType.number,
+                textAlign: TextAlign.right,
+                decoration: InputDecoration(
+                  suffixText: "mg/dL",
                 ),
+                onChanged: (value) {
+                  try {
+                    bloodGlucoseLevel = int.parse(value);
+                  } catch (exception) {}
+                },
               ),
               SizedBox(height: 16.0),
-              DefaultTabController(
-                length: 3,
-                child: TabBar(
-                  unselectedLabelColor: Colors.grey,
-                  labelColor: Colors.black,
-                  tabs: <Widget>[
-                    Tab(
-                      text: '血糖値',
-                    ),
-                    Tab(
-                      text: "投薬",
-                    ),
-                    Tab(
-                      text: "食事",
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 24.0),
               Align(
                 alignment: Alignment.bottomRight,
                 child: ScopedModelDescendant<AppState>(
@@ -111,6 +90,26 @@ class MemoDialog extends StatelessWidget {
       ],
     );
   }
+
+  separator(String test) => Row(children: <Widget>[
+        Expanded(
+          child: new Container(
+              margin: const EdgeInsets.only(left: 10.0, right: 20.0),
+              child: Divider(
+                color: Colors.black,
+                height: 36,
+              )),
+        ),
+        Text("OR"),
+        Expanded(
+          child: new Container(
+              margin: const EdgeInsets.only(left: 20.0, right: 10.0),
+              child: Divider(
+                color: Colors.black,
+                height: 36,
+              )),
+        ),
+      ]);
 }
 
 class MemoDialogConsts {
